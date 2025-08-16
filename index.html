@@ -10,24 +10,23 @@
       font-family: 'Poppins', sans-serif;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh; /* instead of fixed height */
       background: linear-gradient(135deg, #6a11cb, #2575fc);
       text-align: center;
       padding: 20px;
-      overflow: hidden;
     }
 
     h1 {
-      font-size: 3em;
+      font-size: 2.5em;
       color: white;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      margin-top: 40px;
     }
 
     p {
       color: white;
-      font-size: 1.2em;
+      font-size: 1.1em;
     }
 
     button {
@@ -50,7 +49,7 @@
     #hiddenMessage {
       margin-top: 30px;
       padding: 20px;
-      font-size: 1.2em;
+      font-size: 1.1em;
       color: white;
       max-width: 600px;
       background: rgba(255, 255, 255, 0.1);
@@ -74,11 +73,11 @@
   <div id="hiddenMessage">
     Dear Brother,<br><br>
     On this special day, I just want to remind you how much you truly mean to me. 
-    You’ve been more than just a brother—you’ve been my protector, my best friend, 
+    You’ve been more than just a brother you’ve been my protector, my best friend, 
     my role model, and someone I can always count on no matter what.  
     <br><br>
     I’m so grateful for every memory we’ve shared, from the silly times that made us 
-    laugh until our stomachs hurt, to the tough times where your strength gave me courage.  
+    laugh, to the tough times where your strength gave me courage.  
     You’ve always believed in me, even when I doubted myself, and I can never thank you enough 
     for the love and support you’ve shown.  
     <br><br>
@@ -94,7 +93,7 @@
     Happy Birthday, my amazing brother. 💖 You are loved more than words can ever describe.  
     <br><br>
     With all my love,<br>
-    Abdulsalam 💕
+   Abdulsalam 💕
   </div>
 
   <!-- Confetti Script -->
@@ -104,6 +103,9 @@
       let msg = document.getElementById("hiddenMessage");
       msg.style.display = "block";
 
+      // Scroll down to the message on mobile
+      msg.scrollIntoView({ behavior: "smooth" });
+
       // Launch confetti sparks
       confetti({
         particleCount: 150,
@@ -111,7 +113,7 @@
         origin: { y: 0.6 }
       });
 
-      // Extra bursts for effect 🎇
+      // Extra bursts 🎇
       setTimeout(() => {
         confetti({ particleCount: 100, spread: 100, origin: { y: 0.7 } });
       }, 500);
