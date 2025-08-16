@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    p {
+      color: white;
+      font-size: 1.2em;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      background: #fff;
+      color: #2575fc;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #2575fc;
+      color: white;
+    }
+
+    #hiddenMessage {
+      margin-top: 30px;
+      padding: 20px;
+      font-size: 1.2em;
+      color: white;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      line-height: 1.6em;
+      display: none;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Happy Birthday, Brother! 🎉</h1>
+  <p>Click the button below for a special message from me to you.</p>
+  <button onclick="showMessage()">Reveal Message</button>
+
+  <div id="hiddenMessage">
+    Dear Brother,<br><br>
+    On this special day, I just want to remind you how much you truly mean to me. 
+    You’ve been more than just a brother—you’ve been my protector, my best friend, 
+    my role model, and someone I can always count on no matter what.  
+    <br><br>
+    I’m so grateful for every memory we’ve shared, from the silly times that made us 
+    laugh until our stomachs hurt, to the tough times where your strength gave me courage.  
+    You’ve always believed in me, even when I doubted myself, and I can never thank you enough 
+    for the love and support you’ve shown.  
+    <br><br>
+    Today isn’t just about celebrating your birthday it’s about celebrating YOU:  
+    your kindness, your strength, your laughter, and the way you light up every room 
+    you walk into. You are truly one of the greatest blessings in my life, and I’m so 
+    lucky to call you my brother.  
+    <br><br>
+    As you step into this new year of your life, I wish you nothing but happiness, 
+    success, and endless blessings. May all your dreams come true, and may life 
+    bring you even more than you hope for.  
+    <br><br>
+    Happy Birthday, my amazing brother. 💖 You are loved more than words can ever describe.  
+    <br><br>
+    With all my love,<br>
+    Abdulsalam 💕
+  </div>
+
+  <!-- Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    function showMessage() {
+      let msg = document.getElementById("hiddenMessage");
+      msg.style.display = "block";
+
+      // Launch confetti sparks
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+
+      // Extra bursts for effect 🎇
+      setTimeout(() => {
+        confetti({ particleCount: 100, spread: 100, origin: { y: 0.7 } });
+      }, 500);
+
+      setTimeout(() => {
+        confetti({ particleCount: 200, spread: 120, origin: { y: 0.5 } });
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
